@@ -1,0 +1,48 @@
+// there are 3 ways to apply css
+
+--> inline styling ---> every html elment have style atrribute --> 
+---> we can write css inside style tag --
+--> external css --> we can create seperate file for css and apply styling thorugh link stylesheet ---> 
+
+
+
+
+  // css selectors - it helps us to select an html element for styling.
+
+
+  before applying css to any html elemnt we need to select the element - css selectors will help in that.
+
+
+  // id ---> #idStyle
+  // class --> .className
+  // element
+
+  // pseuodo selectors
+
+
+
+
+  ---> css priority
+
+  --> priority -------->  important, inline style, id, class, element
+
+  <div class="myclass" id="my-id">
+
+  inline --> 
+
+  #my-id{
+
+  }
+
+  .myclass{
+
+  }
+
+  div{
+
+  }
+
+
+//positions
+//flex
+//grid

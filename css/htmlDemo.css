@@ -1,0 +1,45 @@
+  .myStyle {
+      color: blue;
+      background-color: blanchedalmond;
+      font-size: 40px;
+      font-weight: 600px;
+    
+  }
+  .myStyle:hover{
+    color: red;
+    background-color: blueviolet;
+
+  }
+  #order-list{
+    background-color: brown;
+  }
+p {
+color: blue;
+}
+body{
+  margin: 16px;
+}
+
+
+.myDiv{
+  color: aqua !important;
+}
+#my-div{
+  color: red !important;
+}
+div{
+  color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
