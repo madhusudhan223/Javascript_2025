@@ -19,6 +19,17 @@
 
   // pseuodo selectors
 
+  // id should be always unique in the whold document
+  // each element can have only one id
+  // each element can have multiple classes
+
+
+
+   single value --> it applies on four sides : ex: margin : 20px
+   four values --> trbl --> top right bottom left ex : margin: 20px 0px 20px 30px
+   two values --> first value will be top and bottom , second value will be left and right margin: 20px 0px
+   three value --> first value will be top, middle value will be left and right, last one will be bottom : margin: 20px 0px 16px
+
 
 
 
@@ -43,6 +54,28 @@
   }
 
 
+positions
+
+static --> 
+
+relative  --> changes the postion of the element with respect to its own axis/postion
+
+absolute ---> it renders the elements once all the elements are rendered. 
+
+changes the postion of the element with respect to parent
+
+make sure your parent element should have any postion other than static --> mostly people use relative
+
+fixed
+
+
+sticky
+
+
+
+
+
+// box modal
 //positions
-//flex
+//flex box
 //grid
