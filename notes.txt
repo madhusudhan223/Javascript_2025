@@ -58,7 +58,9 @@ positions
 
 static --> 
 
+
 relative  --> changes the postion of the element with respect to its own axis/postion
+
 
 absolute ---> it renders the elements once all the elements are rendered. 
 
@@ -66,10 +68,26 @@ changes the postion of the element with respect to parent
 
 make sure your parent element should have any postion other than static --> mostly people use relative
 
-fixed
+fixed --> its always fixed. the element follows the document as parent container for top left etc..
+
+sticky --> relative + fixed --> initially it will be relative as soon as it reaches its top values it will be fixed.
+
+flex: --> to arrange / layout the element in one direction --> either row(horizontal) or column (vertical)
 
 
-sticky
+default flex direction : row
+ 
+justify-content --> align the elements horizantally 
+align-items --> . align the elements vertical
+
+
+flex direction : column
+
+justify-content --> align the elements vertically
+align-items --> . align the elements horizantally
+
+grid --> to arrange / layout the element in two directions --> both row(horizontal) and column(vertical)
+
 
 
 
