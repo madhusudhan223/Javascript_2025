@@ -132,18 +132,6 @@ const userDetails = [{ name: "raj" }, { name: "ram" }, { name: "ravi" }]
 
 
 
-// arithmentc -->  + - * %, / --> 
-
-// assignment operator --> +=, -=, =
-
-// comparision operators --> ==, <=, < , >=, >, !=
-
-// logical operator --> &&, ||, &, |
-
-// !=, !==
-
-// ==, ===
-
 console.log(2 == 2);
 console.log( 2 == '2')  //it check for only values are same or not. it doesnt compare data type
 console.log(2 === '2') // it checks for both value and data type
