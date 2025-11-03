@@ -34,19 +34,40 @@ let myVar = 'test';
 
 // var declation and function declartion --> will move to the top of code
 
- 
-function myFunction() {
-    var x ;
 
+
+function myFunction() {
     if(true){
         var x = 10;
     }
-
-    console.log(x)
-    
+    console.log("my function", x)
 }
 
 myFunction();
+
+
+function greet(message, name){
+    console.log(message, name)
+}
+
+greet('Hello world', 'raj');
+
+
+
+
+
+
+
+
+// es6 --->  arrow functions 
+
+
+
+ 
+
+
+
+
 
 
 
@@ -59,7 +80,7 @@ myFunction();
 
 // var x
 
-console.log(x);
+// console.log(x);
 const y = 30;
 let z= 20
 var x = 10; 
@@ -69,6 +90,8 @@ var x = 10;
 // undefined
 
 // let name;
+
+// let const --> they will be in temperioal dead zone
 
 // console.log(name)
 
