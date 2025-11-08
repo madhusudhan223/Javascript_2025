@@ -7,6 +7,30 @@
 // strings
 
 
+// prototype ---> parent 
+
+// 
+
+// in js everything is object -->
+
+// null super parent in js
+
+
+// array --> Array --> Object --> null
+
+// arr.__proto__.__proto__.__proto__
+
+// function -> Function -> Object --> null
+
+// myFunction.__proto__.__proto__.__proto__
+
+// obj -> Object --> null
+
+const obj = {};
+obj.__proto__
+
+
+// js object
 const circle = {
     radius: 20,
     location: {
@@ -18,6 +42,113 @@ const circle = {
         console.log("draw")
     }
 }
+
+
+// you cannot modify existing properties -> you cannot add new property and you cannot remove the existing property.
+
+// Object.freeze(circle);
+
+// circle.radius = 30;
+
+// circle.color = "black";
+// // circle['color'] = "black"
+
+
+
+// delete circle.location;
+
+// console.log(circle)
+
+
+// seal --> you cannot add new property and you cannot remove the existing property. you can modify the existing property
+
+
+// Object.seal(circle);
+
+// circle.color = "yellow";
+// delete circle.radius
+
+// circle.radius = 30;
+
+// console.log(circle)
+
+
+
+// Object.keys()
+
+// json --> keys will be string format in json
+
+// const circleJson = {
+//     "radius": 20,
+//     "location": {
+//         x: 1,
+//         y: 2
+//     },
+//     "isVisible": true,
+//     "draw": function () {
+//         console.log("draw")
+//     }
+// }
+
+// circleJson.
+// circle.
+
+
+
+
+
+
+// js object , json
+
+// json --> java script object notation
+
+
+
+// Object.
+
+// Object.keys()
+// const name = '';
+
+// console.log(circle.hasOwnProperty("name"))
+
+// freeze
+// seal 
+
+
+
+
+
+// // if("draw" in circle){
+// //     console.log("found the property")
+// // }
+
+
+// object methods
+
+// in --> 
+
+// for in --> objects
+// for of -> arrays
+
+// const keys = Object.keys(circle);
+// const values = Object.values(circle);
+
+// console.log(Object.values(circle));
+
+// console.log(Object.entries(circle));
+
+
+
+// 
+
+// for (let item of Object.keys(circle)){
+//      console.log(item == "isVisble"){
+
+//      }
+// }
+
+
+// 
 
 // factory functions --> camel case --> oneTwoThree
 
@@ -67,7 +198,7 @@ const circle1 = createCircle(10, true);
 
 const constructorCircle = new CreateCircle(40, true)
 
-console.log(constructorCircle);
+// console.log(constructorCircle);
 
 
 
