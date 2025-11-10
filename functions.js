@@ -12,21 +12,49 @@
 
 // myHelper()
 
+// printNumbers()
 
-function printNumbers(){
 
-for (var i = 0; i < 5; i++) {
-    console.log("inside loop", i)
+// function printNumbers(){
+
+// for (var i = 0; i < 5; i++) {
+//     console.log("inside loop", i)
+// }
+//     console.log("outside loop", i)
+
+// }
+
+// es6  arrow functions
+
+// let x= 20;
+// let x = {value: 10}
+
+// ()=>{
+
+// }
+
+const printNumbers = (value)=>{
+    for (var i = 0; i < 5; i++) {
+        console.log("inside loop", i, value)
+    }
 }
-    console.log("outside loop", i)
 
-}
-
-printNumbers()
+printNumbers("my number")
 
 
-for (var i = 0; i < 5; i++) {
-    console.log("inside loop", i)
-}
+// es6 
+
+// spread, rest
+// destructing
+//arrow fucnt
+// let var
+// async awai
+
+
+
+
+// for (var i = 0; i < 5; i++) {
+//     console.log("inside loop", i)
+// }
 
 
