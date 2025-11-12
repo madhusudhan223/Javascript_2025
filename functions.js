@@ -29,17 +29,50 @@
 // let x= 20;
 // let x = {value: 10}
 
-// ()=>{
+// () => {
 
 // }
 
-const printNumbers = (value)=>{
+
+const printNumbers = (value) => {
     for (var i = 0; i < 5; i++) {
         console.log("inside loop", i, value)
     }
 }
 
-printNumbers("my number")
+
+// () --> when there are no parmaeters and if more than one parameter
+// arrow --> this keyword will not be bind to current object it has its own binding
+
+// printNumbers("my number")
+
+// this --> referes to current
+
+
+const circle = {
+    radius: 20,
+    location: {
+        x: 1,
+        y: 2,
+        getX: () => {
+            console.log(this)
+        }
+    },
+    isVisible: true,
+    draw: () => {
+        console.log(this.radius)
+    }
+}
+
+
+// function and 
+// method -- will be declared inside of objects
+ 
+
+// window/global
+
+circle.location.getX();
+
 
 
 // es6 
