@@ -91,3 +91,34 @@ circle.location.getX();
 // }
 
 
+
+// higher order fucntions
+
+
+
+// callback --> printHello-->  a function passed into another function as argument
+
+// greet function --> higher order function -> any function which takes one or functions as arguments
+
+
+
+
+function printHello() {
+console.log("hello world")
+}
+
+// const printHello = () => {
+
+// }
+
+function greet(printMsg){
+    console.log('greet')
+    printMsg()
+}
+
+greet(printHello)
+
+
+
+
+
