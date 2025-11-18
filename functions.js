@@ -100,6 +100,31 @@ circle.location.getX();
 
 // greet function --> higher order function -> any function which takes one or functions as arguments
 
+// hoisting 
+
+// closures -> a closure gives access to its outer scope
+
+// A closure is the combination of a function bundled together with reference it its sorrounding 
+
+
+function myFunction(){
+    let name = "raj";
+
+    function displayName(){
+        console.log(name)
+    }
+
+    displayName()
+
+}
+
+// regex --> regular expression
+
+"//".test()
+
+// form validations --> wherever we take input from users.
+
+myFunction()
 
 
 
@@ -115,6 +140,7 @@ function greet(printMsg){
     console.log('greet')
     printMsg()
 }
+
 
 greet(printHello)
 
