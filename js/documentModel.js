@@ -17,6 +17,9 @@
 // querySelectorAll
 
 
+// vannilla javascript
+
+
 
 const myButton = document.getElementById("my-button")
 const myTagElement = document.getElementsByTagName("button")
@@ -24,11 +27,49 @@ const myTagClass = document.getElementsByClassName("button")
 
 
 const handleClick = () => {
-    myButton.innerHTML = "New button";
+    // myButton.innerHTML = "Hide";
+    console.log(myButton.innerHTML)
+    if (myButton.innerHTML == "Show"){
+        
+        myButton.innerHTML = "Hide";
+        // myButton
+        const list = document.createElement("ul");
+        list.setAttribute("id", "unordered-list");
+        // list.removeAttribute("id");
+        list.innerHTML = "<li>list element 1</li> <li>list element 2</li>"
+
+        const myEmptyDiv = document.getElementById('my-list');
+
+        myEmptyDiv.appendChild(list)
+        // myEmptyDiv.style.visibility = "visible";
+
+        console.log(list)
+        myButton.style.background = "gold"
+
+    }else{
+        myButton.innerHTML = "Show";
+        const myEmptyDiv = document.getElementById('my-list');
+        // myEmptyDiv.style.visibility = "hidden";
+        const unorderedList = document.getElementById('unordered-list');
+        // myEmptyDiv.replaceChild("<div>My div</div>", unorderedList)
+        myEmptyDiv.removeChild(unorderedList)
+        myButton.style.background = "aqua"
+    }
+
+}
+
+const handleMouseOver = () => {
     myButton.style.background = "gold"
 }
 
+const handleMouseLeave = () => {
+    myButton.style.background = "aqua"
+}
+
 myButton.addEventListener("click", handleClick);
+
+myButton.addEventListener("mouseover", handleMouseOver);
+myButton.addEventListener("mouseleave", handleMouseLeave);
 
 // myButton.addEventListener("click", function(){
 //     console.log("hello")
@@ -64,3 +105,7 @@ const queryID = document.querySelectorAll("#my-button")
 // console.log(document.querySelectorAll("p"))
 
 // console.log(queryID[0], queryID[1])
+
+
+
+
