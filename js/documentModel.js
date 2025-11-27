@@ -24,9 +24,11 @@
 const myButton = document.getElementById("my-button")
 const myTagElement = document.getElementsByTagName("button")
 const myTagClass = document.getElementsByClassName("button")
+const inputBox = document.getElementById("my-input");
 
 
-const handleClick = () => {
+const handleClick = (event) => {
+    // console.log(event)
     // myButton.innerHTML = "Hide";
     console.log(myButton.innerHTML)
     if (myButton.innerHTML == "Show"){
@@ -43,7 +45,7 @@ const handleClick = () => {
         myEmptyDiv.appendChild(list)
         // myEmptyDiv.style.visibility = "visible";
 
-        console.log(list)
+        // console.log(list)
         myButton.style.background = "gold"
 
     }else{
@@ -66,10 +68,81 @@ const handleMouseLeave = () => {
     myButton.style.background = "aqua"
 }
 
+const handleScroll = (event) => {
+    // console.log(event)
+    // console.log(window.scrollY)
+    // console.log(scrollY)
+    // window.
+    // console.log("user scrolling")
+    
+}
+const handleFocus = (event) => {
+
+    inputBox.style.border = "2px solid gold"
+    // console.log("focused")
+ 
+}
+const handleBlur = (event) => {
+   
+}
+
+const handleChange = (event) => {
+
+
+    // console.log("change event", event.target.value)
+
+    // console.log(inputBox.value)
+
+}
+
+const handleInput = (event) => {
+
+    // console.log(event.target.value)
+
+}
+
+const handleKeyDown = (event) => {
+    console.log("key down", event.target.value)
+}
+
+const handleKeyUp = (event) => {
+    console.log("key up", event.target.value)
+}
+
+
 myButton.addEventListener("click", handleClick);
+
+ inputBox.addEventListener("focus", handleFocus)
+// inputBox.addEventListener("blur", handleBlur)
+
+
+inputBox.addEventListener("change", handleChange)
+
+inputBox.addEventListener("input", handleInput)
+
+// inputBox.addEventListener("keydown", handleKeyDown)
+
+inputBox.addEventListener("keyup", handleKeyUp)
+
+
+
+// focus --> as soon as user enters into input
+// onBlur -->  as soon as user leaves the input
+
+// change
+// input
+// keydown
+// key up
+
 
 myButton.addEventListener("mouseover", handleMouseOver);
 myButton.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("scroll", handleScroll)
+
+// con
+
+
 
 // myButton.addEventListener("click", function(){
 //     console.log("hello")
