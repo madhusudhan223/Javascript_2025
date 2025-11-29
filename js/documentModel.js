@@ -25,6 +25,28 @@ const myButton = document.getElementById("my-button")
 const myTagElement = document.getElementsByTagName("button")
 const myTagClass = document.getElementsByClassName("button")
 const inputBox = document.getElementById("my-input");
+const myBox = document.querySelector(".box");
+
+const handleBoxClick = () => {
+    myBox.classList.remove("box")
+    myBox.classList.add("myclass")
+
+    // toggle
+// if class is there it will remove that class
+// if class is not there it will add that class
+
+     myBox.classList.toggle("dummy")
+    // myBox.classList.toggle("dummy", true) it will only add the class
+    // myBox.classList.toggle("dummy", false) it will only remove the class
+
+}
+
+myBox.addEventListener("click", handleBoxClick)
+ 
+console.log(myBox)
+
+
+
 
 
 const handleClick = (event) => {
@@ -59,6 +81,11 @@ const handleClick = (event) => {
     }
 
 }
+
+
+// classList
+
+// add, remove, toggle
 
 const handleMouseOver = () => {
     myButton.style.background = "gold"
@@ -133,6 +160,9 @@ inputBox.addEventListener("keyup", handleKeyUp)
 // input
 // keydown
 // key up
+
+
+// document.
 
 
 myButton.addEventListener("mouseover", handleMouseOver);
