@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .todo-container {
+            width: 350px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #clearBtn {
+            background: #dc3545;
+            margin-top: 10px;
+        }
+
+        #clearBtn:hover {
+            background: #b02a37;
+        }
+
+        ul {
+            padding: 0;
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        li {
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid #007bff;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            padding: 6px 10px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        .delete-btn:hover {
+            background: #b02a37;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="todo-container">
+        <h2>To-Do List</h2>
+
+        <div class="input-row">
+            <input type="text" id="taskInput" placeholder="Enter task">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <button id="clearBtn" onclick="clearAll()">Clear All</button>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+    // Load tasks when page loads
+    document.addEventListener("DOMContentLoaded", loadTasks);
+
+    function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const task = taskInput.value.trim();
+
+        if (task === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        addTaskToUI(task);
+        saveTask(task);
+
+        taskInput.value = "";
+    }
+
+    function addTaskToUI(task) {
+        const ul = document.getElementById("taskList");
+
+        const li = document.createElement("li");
+        li.textContent = task;
+
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.className = "delete-btn";
+        delBtn.onclick = () => deleteTask(task, li);
+
+        li.appendChild(delBtn);
+        ul.appendChild(li);
+    }
+
+    // Save to LocalStorage
+    function saveTask(task) {
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.push(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.forEach(task => addTaskToUI(task));
+    }
+
+    // Delete a single task
+    function deleteTask(task, li) {
+        li.remove();
+
+        let tasks = JSON.parse(localStorage.getItem("tasks"));
+        tasks = tasks.filter(t => t !== task);
+
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    // Clear all tasks
+    function clearAll() {
+        document.getElementById("taskList").innerHTML = "";
+        localStorage.removeItem("tasks");
+    }
+    </script>
+
+</body>
+
+</html>
