@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>User Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f4f6f8;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #125aa3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #1976d2;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="fetchBtn">Fetch Users</button>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Company Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will appear here -->
+        </tbody>
+    </table>
+
+    <script>
+
+        const apiURL = "https://jsonplaceholder.typicode.com/users";
+            const fetchBtn = document.getElementById("fetchBtn");
+            const tableBody = document.querySelector("#userTable tbody");
+
+            fetchBtn.addEventListener("click", fetchUsers);
+
+            function fetchUsers() {
+                // Clear previous data (important)
+                tableBody.innerHTML = "";
+
+                fetch(apiURL)
+                    .then(response => response.json())
+                    .then(users => {
+                        console.log(users)
+                        users.forEach(user => {
+                            const row = document.createElement("tr");
+
+                            row.innerHTML = `
+                    <td>${user.username}</td>
+                    <td>${user.email}</td>
+                    <td>${user.company.name}</td>
+                `;
+
+                            tableBody.appendChild(row);
+                        });
+                    })
+                    .catch(error => {
+                        console.error("Error fetching users:", error);
+                    });
+            }
+
+    </script>
+</body>
+
+</html>

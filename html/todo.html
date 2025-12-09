@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .input-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 100vh; */
+    }
+    .input-box {
+      height: 43px;
+      width: 20%;
+      font-size: 16px;
+      outline: none;
+      border: 1px solid green;
+      padding-left: 16px;
+    }
+    h1 {
+      display: flex;
+      justify-content: center;
+    }
+    .addBtn {
+      border: none;
+      padding: 16px;
+      width: 150px;
+      background: green;
+      color: white;
+      cursor: pointer;
+    }
+    #todo-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .list-item{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        margin: 8px;
+        min-width: 300px;
+        background-color: bisque;
+    }
+    .delete-btn{
+        border: none;
+        padding: 6px;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        margin: 0px 8px;
+        border-radius: 4px;
+    }
+    .clear-input{
+      font-size: 16px;
+      color: green;
+      font-family: monospace;
+      position: relative;
+      right: 30px;
+      cursor: pointer;
+    }
+    
+  </style>
+  <body>
+    <h1>ToDo List</h1>
+    <div class="input-container">
+      <input type="text" class="input-box"  id="input-box" placeholder="Enter your task" />
+      <span class="clear-input" onclick="clearInput()">x</span>
+      <button class="addBtn" id="add-btn" onclick="addTask()">Add</button>
+    </div>
+    <ul id="todo-list"></ul>
+    <script src="/js/todo.js"></script>
+  </body>
+</html>
