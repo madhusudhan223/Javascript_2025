@@ -10,12 +10,15 @@ const todoList = document.getElementById("todo-list")
 function clearInput(){
     inputBox.value = ""
 }
-function deleteItem(){
-    console.log("delte")
+function deleteItem(element){
+    const parent =  element.parentElement;
+    parent.remove()
+}
+function removeAll(){
+  todoList.innerHTML = "";
 }
 
 function addTask(){
-
     const inputValue = inputBox.value;
 
     if(inputValue == ""){
@@ -26,12 +29,13 @@ function addTask(){
 
     listItem.className = "list-item"
 
-      const listItemContent = `${inputValue}<button class="delete-btn" onclick="deleteItem()">Delete</button>`
+      const listItemContent = `${inputValue}<button class="delete-btn" onclick="deleteItem(this)">Delete</button>`
 
     listItem.innerHTML = listItemContent
 
-
     todoList.appendChild(listItem)
+    inputBox.value = '';
+
 
 
 

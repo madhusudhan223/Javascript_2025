@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List with LocalStorage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #input-box {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #remove-all {
+            background: #dc3545;
+            margin-left: 5px;
+        }
+
+        #remove-all:hover {
+            background: #a71d2a;
+        }
+
+        ul {
+            margin-top: 20px;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            padding: 12px;
+            background: #eee;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete-btn {
+            background: #ff4d4d;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Todo List</h2>
+
+        <input id="input-box" type="text" placeholder="Enter task">
+        <button onclick="addTask()">Add</button>
+        <button id="remove-all" style="margin:16px;" onclick="removeAll()">Remove All</button>
+
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script src="../js/todoListWithLocalStorage.js"></script>
+</body>
+
+</html>
